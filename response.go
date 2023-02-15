@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 )
 
@@ -18,5 +19,6 @@ func newTokenResponse(raw []byte) *tokenResponse {
 		log.Println("json unmarshal err:", err)
 		return ret
 	}
+	fmt.Println("TokenResponse:", "Status:", &ret.Status, "Message:", &ret.Message, "Token:", &ret.AccessToken, ret)
 	return ret
 }

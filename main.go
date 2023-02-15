@@ -49,6 +49,7 @@ func notifyHandler(w http.ResponseWriter, r *http.Request) {
 	data.Add("message", msg)
 
 	byt, err := apiCall("POST", apiNotify, data, token)
+	fmt.Println(fmt.Printf("apiNotify:%s,data:%s,token:%s", apiNotify, data, token))
 	fmt.Println("ret:", string(byt), " err:", err)
 
 	res := newTokenResponse(byt)
